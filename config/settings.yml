@@ -17,3 +17,5 @@ max_length_noti: 500
 max_length_tag: 15
 per_sheet: 6
 size_avatar: 5
+age_form: 18
+age_to: 60
