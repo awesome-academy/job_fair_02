@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :taggings, as: :taggable
   has_many :tags, through: :taggings
 
-  validates :name, present: true, length: {maximum: Settings.max_length_name}
+  validates :name, presence: true, length: {maximum: Settings.max_length_name}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: Settings.max_length_mail},
     format: {with: VALID_EMAIL_REGEX},
