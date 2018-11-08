@@ -36,8 +36,6 @@ en:
         expiration_date: "Expiration date"
         organization_id: "Organization"
         choose_organization: "Choose organization"
-        success: "Create job successful!"
-        error: "Create job error!"
       curriculum_vitae:
         industry: "Industry"
         target: "Target"
@@ -68,12 +66,24 @@ en:
       choose_career: "Choose career"
       choose_province: "Choose province"
       create_job: "Create Job"
+    create:
+      success: "Create job successful!"
+      error: "Create job error!"
+    show:
+      not_found: "Job not found!"
+      new_job: "New Job"
+    job:
+      new: "New"
+      expired: "Expired"
   number:
     currency:
       format:
         format: "%n %u"
         unit: "VND"
         precision: 0
+  date:
+    formats:
+      short: "%d/%m/%Y"
   age_to: "Age to must older than Age from"
   expiration_date: "must be later than the current date"
   curriculum_vitaes:
@@ -91,3 +101,10 @@ en:
   error:
     contain: "Contain"
     errors: "errors"
+  views:
+    pagination:
+      first: "&laquo;&laquo;"
+      last: "&raquo;&raquo;"
+      previous: "&lsaquo;&lsaquo;"
+      next: "&rsaquo;&rsaquo;"
+      truncate: "&hellip;"

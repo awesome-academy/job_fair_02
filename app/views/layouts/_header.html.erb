@@ -13,9 +13,11 @@
           <li class="nav-item mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
             <%= link_to t(".createCV"), new_curriculum_vitae_path %>
           </li>
-          <li class="nav-item  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
-            <%= link_to t(".createJob"), new_job_path %>
-          </li>
+          <% if user_signed_in? && current_user.organization_users.present? %>
+            <li class="nav-item  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
+              <%= link_to t(".createJob"), new_job_path %>
+            </li>
+          <% end %>
         </ul>
         <% if user_signed_in? %>
           <%= link_to t(".logout"), destroy_user_session_path, method: :delete,

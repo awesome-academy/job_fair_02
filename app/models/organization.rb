@@ -13,7 +13,8 @@ class Organization < ApplicationRecord
   validates :phone, presence: true, numericality: true,
     length: {minimum: Settings.min_length_phone,
              maximum: Settings.max_length_phone}
-  validates :address, presence: true, length: {maximum: Settings.max_length_add}
+  validates :address, presence: true,
+    length: {maximum: Settings.max_length_address}
   validates :website, length: {maximum: Settings.max_length_mail}
   validates :description, presence: true,
     length: {maximum: Settings.max_length_experience}

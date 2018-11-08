@@ -1,0 +1,80 @@
+<% provide :title, @job.title %>
+<div >
+  <div class="container company mt-5">
+    <div class="row">
+
+      <div class="col-md-4 company_info mt-5">
+
+        <%= image_tag "evolable-asia-logo.png", class: "mb-5" %><br>
+
+        <p class="mt-5 "><%= t ".company" %>:&nbsp;</p>
+        <p><%= link_to @job.organization.name%></p><br>
+        <hr>
+
+        <p><%= t ".phone" %>:&nbsp;</p>
+        <p><%= @job.organization.phone %></p><br>
+        <hr>
+
+        <p><%= t ".email" %>:&nbsp;</p>
+        <p><%= @job.organization.email %></p><br>
+        <hr>
+
+        <p><%= t ".website" %>:&nbsp;</p>
+        <p><%= link_to @job.organization.website,
+          @job.organization.website, target: "_blank" %></p><br>
+        <hr>
+
+        <p><%= t ".address" %>:&nbsp;</p>
+        <p><%= @job.organization.address %></p><br>
+        <hr>
+      </div>
+
+      <div class="col-md-8 job_info">
+
+        <% if new_job? @job %>
+          <span class="flag float-right"><%= t ".new_job" %></span>
+          <h1><%= @job.title%></h1>
+        <% else %>
+          <h1><%= @job.title%></h1>
+        <% end %>
+
+        <h5><%= t ".career" %></h5><hr>
+        <p><%= @job.career.name %></p><br>
+
+        <h5><%= t ".age" %></h5><hr>
+        
+        <p class="float-left"><%= t ".from" %>&nbsp;</p>
+        <p class="float-left"><%= @job.age_from %>&nbsp;&nbsp;</p>
+
+        <p class="float-left"><%= t ".to" %>&nbsp;</p>
+        <p><%= @job.age_to %></p><br>
+
+        <h5><%= t ".skill" %></h5><hr>
+        <p><%= @job.skill %></p><br>
+
+        <h5><%= t ".level" %></h5><hr>
+        <p><%= @job.level %></p><br>
+
+        <h5><%= t ".employment_type" %></h5><hr>
+        <p><%= @job.employment_type %></p><br>
+
+        <% if user_signed_in? %>
+          <h5><%= t ".salary" %></h5><hr>
+          <p><%= number_to_currency @job.salary %></p><br>
+        <% end %>
+
+        <h5><%= t ".work_address" %></h5><hr>
+        <p><%= @job.work_address %></p><br>
+
+        <h5><%= t ".experience" %></h5><hr>
+        <p><%= @job.experience %></p><br>
+
+        <h5><%= t ".description" %></h5><hr>
+        <p><%= @job.description %></p><br>
+
+        <h5><%= t ".expiration_date" %></h5><hr>
+        <p><%= l(@job.expiration_date, format: :short) %></p><br>
+      </div>
+    </div>
+  </div>
+</div>

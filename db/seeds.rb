@@ -45,3 +45,67 @@ end
       admin: false
     )
 end
+#Jobs
+# Job chưa hết hạn
+10.times do |n|
+  Job.create!(
+    organization_id: 1,
+    career_id: n+1,
+    province_id: n+1,
+    title: FFaker::Lorem.sentence(3),
+    age_from: 20,
+    age_to: 40,
+    salary: 10000000,
+    work_address: FFaker::Lorem.sentence(rand(3..5)),
+    employment_type: "Full time",
+    skill: FFaker::Lorem.sentence(rand(10..30)),
+    level: FFaker::Lorem.sentence(rand(5..10)),
+    experience: "2 năm",
+    description: FFaker::Lorem.sentence(rand(70..100)),
+    expiration_date: "2018-11-28",
+    created_at: "2018-10-01 16:52:08",
+    updated_at: "2018-11-12 16:52:08"
+  )
+end
+#Job hết hạn
+10.times do |n|
+  Job.create!(
+    organization_id: 1,
+    career_id: n+1,
+    province_id: n+1,
+    title: FFaker::Lorem.sentence(3),
+    age_from: 20,
+    age_to: 35,
+    salary: 15000000,
+    work_address: FFaker::Lorem.sentence(rand(3..5)),
+    employment_type: "Full time",
+    skill: FFaker::Lorem.sentence(rand(10..30)),
+    level: FFaker::Lorem.sentence(rand(5..10)),
+    experience: "1 năm",
+    description: FFaker::Lorem.sentence(rand(70..100)),
+    expiration_date: "2018-11-01",
+    created_at: "2018-10-01 16:52:08",
+    updated_at: "2018-11-01 16:52:08"
+  )
+end
+#Job mới đăng
+10.times do |n|
+  Job.create!(
+    organization_id: 1,
+    career_id: n+1,
+    province_id: n+1,
+    title: FFaker::Lorem.sentence(3),
+    age_from: 25,
+    age_to: 35,
+    salary: 20000000,
+    work_address: FFaker::Lorem.sentence(rand(3..5)),
+    employment_type: "Part time",
+    skill: FFaker::Lorem.sentence(rand(10..30)),
+    level: FFaker::Lorem.sentence(rand(5..10)),
+    experience: "1 năm",
+    description: FFaker::Lorem.sentence(rand(70..100)),
+    expiration_date: "2018-11-28",
+    created_at: DateTime.current,
+    updated_at: DateTime.current
+  )
+end

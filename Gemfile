@@ -4,12 +4,15 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 ruby "2.5.1"
 
 gem "bootsnap", ">= 1.1.0", require: false
+gem "bootstrap-kaminari-views"
 gem "cocoon"
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "devise"
 gem "ffaker", "~> 2.2"
 gem "jbuilder", "~> 2.5"
+gem "hirb", "~> 0.2.4"
+gem "kaminari"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.1"
