@@ -1,8 +1,7 @@
 class Organization < ApplicationRecord
   has_many :jobs
-  has_many :organization_curriculum_vitaes, dependent: :destroy
-  has_many :curriculum_vitaes, through: :organization_curriculum_vitaes,
-    dependent: :destroy
+  has_many :organization_users
+  has_many :users, through: :organization_users
   has_many :taggings, as: :taggable
   has_many :tags, through: :taggings
 
