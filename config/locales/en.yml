@@ -18,6 +18,7 @@ en:
       fax: "+ 01 234 567 89"
   activerecord:
     models:
+      curriculum_vitae: "Curriculum Vitae"
       job: "Job"
     attributes:
       job:
@@ -37,6 +38,15 @@ en:
         choose_organization: "Choose organization"
         success: "Create job successful!"
         error: "Create job error!"
+      curriculum_vitae:
+        industry: "Industry"
+        target: "Target"
+        experience: "Experience"
+        skill: "Skill"
+        language: "Language"
+      curriculum_vitae_detail:
+        title: "Title"
+        content: "Content"
   users:
     registrations:
       signup: "Sign up"
@@ -66,3 +76,18 @@ en:
         precision: 0
   age_to: "Age to must older than Age from"
   expiration_date: "must be later than the current date"
+  curriculum_vitaes:
+    new:
+      create: "Create"
+      title: "Create your curriculum vitae"
+      your_options: "Your options:"
+      add: "Add option"
+      public: "Public"
+    curriculum_vitae_detail_fields:
+      remove: "Remove above option"
+    create:
+      failed: "Create failed!"
+      success: "Create successfully!"
+  error:
+    contain: "Contain"
+    errors: "errors"
