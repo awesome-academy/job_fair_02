@@ -1,0 +1,7 @@
+<%= form_with model: @cv_job, local: true do |f| %>
+  <div><%= hidden_field_tag :job_id, @job.id %></div>
+  <%= f.label :curriculum_vitae_id, t(".select") %>
+  <%= f.select :curriculum_vitae_id, options_for_select(@support.cv_options),
+    {include_blank: t(".choose")}, {class: "form-control"} %>
+  <%= f.submit t(".apply"), class: "btn btn-primary form-control" %>
+<% end %>

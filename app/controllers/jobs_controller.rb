@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, :support, only: %i(new create)
-  before_action :find_job, only: :show
+  before_action :find_job, :support, only: :show
 
   def index
     @jobs = Job.job_expired.order_job.page(params[:page]).per Settings.per_sheet
@@ -22,7 +22,10 @@ class JobsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    return unless user_signed_in?
+    @cv_job = @job.curriculum_vitae_jobs.build
+  end
 
   private
 

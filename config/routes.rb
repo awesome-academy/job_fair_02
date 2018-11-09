@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :users, only: :show
     resources :jobs
     resources :curriculum_vitaes
+    resources :curriculum_vitae_jobs, only: %i(new create)
   end
 end

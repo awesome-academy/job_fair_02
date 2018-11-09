@@ -74,6 +74,15 @@ en:
     show:
       not_found: "Job not found!"
       new_job: "New Job"
+      apply: "Apply for job"
+      r_login: "You must login to apply CV"
+      select_cv: "Select your CV"
+      signup: "Sign up"
+      login: "Login"
+    apply:
+      select: "Select your CV"
+      choose: "Choose your CV"
+      apply: "Apply"
     job:
       new: "New"
       expired: "Expired"
@@ -107,6 +116,11 @@ en:
       skill: "Skill"
       language: "Language"
       not_permit: "You can't see this curriculum vitae"
+  curriculum_vitae_jobs:
+    create:
+      success: "Applied successful"
+      failed: "Apply failed"
+      not_found: "Not found this job"
   error:
     contain: "Contain"
     errors: "errors"
