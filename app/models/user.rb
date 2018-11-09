@@ -21,4 +21,8 @@ class User < ApplicationRecord
              maximum: Settings.max_length_phone}
   validates :address, presence: true,
     length: {maximum: Settings.max_length_address}
+
+  def current_user? user
+    self == user
+  end
 end

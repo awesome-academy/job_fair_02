@@ -1,0 +1,56 @@
+<div class="body">
+  <div id="wrapper">
+    <div class="wrapper-top"></div>
+    <div class="wrapper-mid">
+      <div id="paper">
+        <div class="paper-top"></div>
+        <div id="paper-mid">
+          <div class="entry">
+            <% if @cv.avatar.present? %>
+              <%= image_tag @cv.avatar, class: "portrait" %>
+            <% else %>
+              <div class="no-img"></div>
+            <% end %>
+            <div class="self">
+              <h1 class="name"><%= @cv.name %><br>
+                <span><%= @cv.industry %></span></h1>
+              <ul>
+                <li class="ad"><%= @cv.address %></li>
+                <li class="mail"><%= @cv.email %></li>
+                <li class="tel"><%= @cv.phone %></li>
+              </ul>
+            </div>
+            <div class="self">
+              <ul class="social">
+                <li><i class="fa fa-transgender"></i>  <%= @cv.gender %></li>
+                <li><i class="fa fa-birthday-cake" aria-hidden="true"></i> <%= @cv.birthday %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="entry">
+            <h2><%= t ".target" %></h2>
+            <p><%= @cv.target %></p>
+          </div>
+          <div class="entry">
+            <h2><%= t ".experience" %></h2>
+            <p><%= @cv.experience %></p>
+          </div>
+
+          <div class="entry">
+            <h2><%= t ".skill" %></h2>
+            <p><%= @cv.skill %></p>
+          </div>
+
+          <div class="entry">
+            <h2><%= t ".language" %></h2>
+            <p><%= @cv.language %></p>
+          </div>
+          <%= render @details %>
+        </div>
+        <div class="clear"></div>
+        <div class="paper-bottom"></div>
+      </div>
+    </div>
+    <div class="wrapper-bottom"></div>
+  </div>
+</div>

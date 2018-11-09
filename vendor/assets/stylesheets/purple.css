@@ -1,0 +1,305 @@
+
+/* LAYOUT */
+/* ----------------------------------------- */
+
+.body {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background-repeat: repeat;
+	font-size:13px;
+	line-height: 17px;
+	color:#000;
+}
+
+/* DOSSIER BACKGROUND */
+/* ----------------------------------------- */
+
+#wrapper {
+	width:969px;
+	margin:0 auto;
+	margin-top:60px;
+	margin-bottom:100px;
+}
+
+.wrapper-top {
+	height:19px;
+	margin:0 auto;
+	background-image:url(btop.jpg);
+	background-repeat:no-repeat;
+}
+
+.wrapper-mid {
+	width:969px;
+	margin:0 auto;
+	background-image:url(bmid.jpg);
+	background-repeat: repeat-y;
+	padding-bottom:40px;
+}
+
+.wrapper-bottom {
+	width:969px;
+	height:22px;
+	padding:0;
+	margin:0 auto;
+	background-image:url(bbottom.jpg);
+	background-repeat:no-repeat;
+}
+
+/* PAPER BACKGROUND */
+/* ----------------------------------------- */
+
+#paper {
+	width:828px;
+	margin:0 auto;
+}
+
+.paper-top {
+	width:828px;
+	margin:0 auto;
+	background-image:url(ptop.jpg);
+	background-repeat:no-repeat;
+	height:126px;
+}
+
+#paper-mid {
+	width:828px;
+	margin:0 auto;
+	background-image:url(pmid.jpg);
+	background-repeat:repeat-y;
+	display:block;
+	padding:0;
+	overflow: hidden;
+	padding-bottom:75px;
+	padding-top:7px;
+}
+
+.paper-bottom {
+	width:828px;
+	height:18px;
+	margin:0 auto;
+	background-image:url(pbottom.jpg);
+	background-repeat:no-repeat;
+}
+
+/* ENTRIES */
+/* ----------------------------------------- */
+
+.entry {
+	width:720px;
+	display: block;
+	padding-top:55px;
+	clear: both;
+	margin-left:4px;
+}
+
+.self h1{
+	font-size:42px;
+	color:#624863;
+	margin-bottom:3px;
+	clear:both;
+}
+
+.entry h1 span {
+	text-align: left;
+	font-size:21px;
+	display:block;
+	color:#624863;
+	margin-top:-5px;
+}
+
+.entry h2 {
+	width:180px;
+	height: 23px;
+	text-align: right;
+	float:left;
+	padding:0;
+	margin:0;
+	clear:both;
+	font-size:22px;
+	color:#624863;
+	margin-bottom:-12px;
+}
+
+.entry p {
+	width:500px;
+	margin-left:40px;
+	float:right;
+}
+
+.entry p img {
+	float:right;
+	margin-left:20px;
+	padding-left:10px;
+}
+
+.entry div.contents {
+	clear: both;
+	padding:0;
+	margin:0;
+	overflow: hidden;
+	display:block;
+	padding-top:32px;
+}
+
+.entry h3 {
+	width:180px;
+	text-align: right;
+	float:left;
+	padding:0;
+	clear:both;
+	font-size: 13px;
+	color:#9a8b9b;
+}
+
+.entry h4 {
+	width:180px;
+	text-align: right;
+	float:left;
+	padding:0;
+	clear:both;
+	font-size: 11px;
+	color:#9a8b9b;
+}
+
+.entry h5 {
+	width:180px;
+	text-align: right;
+	float:left;
+	padding:0;
+	clear:both;
+	font-size: 10px;
+	color:#9a8b9b;
+}
+
+.entry h6 {
+	width:180px;
+	text-align: right;
+	float:left;
+	padding:0;
+	clear:both;
+	font-size: 9px;
+	color:#9a8b9b;
+}
+
+.entry em {
+	font-family: Georgia, "Times New Roman", serif;
+	font-style: italic;
+	color:#777777;
+	font-size:12px;
+	display: block;
+	padding-top:3px;
+}
+
+
+.entry ol {
+	float:right;
+	width:500px;
+	margin-left:40px;
+	list-style: decimal;
+
+}
+
+.entry ol li {
+	width:500px;
+	list-style-type: decimal;
+	list-style-position: inside;
+}
+
+dl {
+	float:right;
+	width:500px;
+	margin-left:40px;
+
+}
+
+dt {
+	float:left;
+	display: block;
+	width:500px;
+		color:#9a8b9b;
+}
+
+dd {
+	float:left;
+	display: block;
+	width:480px;
+	text-indent:20px;
+}
+
+ul.unordered {
+	float:right;
+	width:500px;
+	margin-left:40px;
+
+}
+
+ul.info {
+	float:right;
+	width:500px;
+	margin-left:40px;
+	list-style-type: none;
+}
+
+img.portrait {
+	background-image:url(frame.jpg);
+	background-repeat: no-repeat;
+	width:139px;
+	height:159px;
+	padding-top:20px;
+	padding-left:11px;
+	padding-right:11px;
+	margin-left:50px;
+	float:left;
+}
+
+.no-img {
+	width:139px;
+	height:159px;
+	padding-top:20px;
+	padding-left:11px;
+	padding-right:11px;
+	margin-left:50px;
+	float:left;
+}
+
+
+/* SELF INFORMATION */
+/* ----------------------------------------- */
+
+.self {
+	float:left;
+	padding-top:11px;
+	margin-left:38px;
+	margin-bottom:15px;
+}
+
+.self ul {
+	padding-top: 10px;
+}
+
+.self ul li.ad {
+	background-image:url(icn-ad.gif);
+}
+
+.self ul li.mail {
+	background-image:url(icn-mail.gif);
+}
+
+.self ul li.tel {
+	background-image:url(icn-tel.gif);
+}
+
+.self ul li {
+	background-repeat: no-repeat;
+	padding-left:26px;
+	background-position: 0 .1em;
+	height:25px;
+	display:block;
+	margin-top:-2px;
+}
+
+/* SOCIAL ICONS */
+/* ----------------------------------------- */
+
+.social {
+	margin-top:95px;
+}

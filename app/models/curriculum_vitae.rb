@@ -24,4 +24,7 @@ class CurriculumVitae < ApplicationRecord
   CURRICULUM_VITAE_PARAMS = [:industry, :target, :experience, :skill, :language,
     :public, curriculum_vitae_details_attributes:
       %i(id title content _destroy)].freeze
+
+  delegate :avatar, :name, :address, :email, :phone, :gender, :birthday,
+    to: :user
 end

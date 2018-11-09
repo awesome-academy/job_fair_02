@@ -1,0 +1,30 @@
+<% provide :title, @user.name %>
+<div class="row">
+  <aside class="col-lg-2">
+    <div class="entry">
+      <div class="media-img">
+        <%= image_tag (@user.avatar or "profile_image.jpg") %>
+      </div>
+      <div class="self">
+        <h1 class="name"><span><%= @user.name %></span></h1><br>
+        <ul>
+          <i class="fa fa-transgender"></i>  <%= @user.gender %><br>
+          <i class="fa fa-birthday-cake" aria-hidden="true"></i> <%= @user.birthday %>
+          <li class="ad"><%= @user.address %></li>
+          <li class="mail"><%= @user.email %></li>
+          <li class="tel"><%= @user.phone %></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+  <div class="col-lg-10 line_left">
+    <div class="entry">
+      <% if @user.curriculum_vitaes.any? %>
+        <ol class="list-group">
+          <li class="list-group-item "><%= t ".listCV" %></li>
+          <%= render @user.curriculum_vitaes %>
+        </ol>
+      <% end %>
+    </div>
+  </div>
+</div>
