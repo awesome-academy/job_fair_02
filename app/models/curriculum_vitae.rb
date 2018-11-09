@@ -1,8 +1,8 @@
 class CurriculumVitae < ApplicationRecord
   belongs_to :user
   has_many :curriculum_vitae_details, dependent: :destroy
-  has_many :organization_curriculum_vitaes, dependent: :destroy
-  has_many :organizations, through: :organization_curriculum_vitaes,
+  has_many :curriculum_vitae_jobs, dependent: :destroy
+  has_many :jobs, through: :curriculum_vitae_jobs,
     dependent: :destroy
   has_many :taggings, as: :taggable
   has_many :tags, through: :taggings

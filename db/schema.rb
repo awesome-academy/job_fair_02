@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_07_101219) do
+ActiveRecord::Schema.define(version: 2018_11_09_044229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 2018_11_07_101219) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["curriculum_vitae_id"], name: "index_curriculum_vitae_details_on_curriculum_vitae_id"
+  end
+
+  create_table "curriculum_vitae_jobs", force: :cascade do |t|
+    t.bigint "job_id"
+    t.bigint "curriculum_vitae_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["curriculum_vitae_id"], name: "index_curriculum_vitae_jobs_on_curriculum_vitae_id"
+    t.index ["job_id"], name: "index_curriculum_vitae_jobs_on_job_id"
   end
 
   create_table "curriculum_vitaes", force: :cascade do |t|
@@ -78,13 +87,14 @@ ActiveRecord::Schema.define(version: 2018_11_07_101219) do
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
-  create_table "organization_curriculum_vitaes", force: :cascade do |t|
+  create_table "organization_users", force: :cascade do |t|
     t.bigint "organization_id"
-    t.bigint "curriculum_vitae_id"
+    t.bigint "user_id"
+    t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["curriculum_vitae_id"], name: "index_organization_curriculum_vitaes_on_curriculum_vitae_id"
-    t.index ["organization_id"], name: "index_organization_curriculum_vitaes_on_organization_id"
+    t.index ["organization_id"], name: "index_organization_users_on_organization_id"
+    t.index ["user_id"], name: "index_organization_users_on_user_id"
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -98,6 +108,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_101219) do
     t.string "avatar"
     t.integer "founded"
     t.string "form_cv"
+    t.boolean "verified", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -136,12 +147,14 @@ ActiveRecord::Schema.define(version: 2018_11_07_101219) do
   end
 
   add_foreign_key "curriculum_vitae_details", "curriculum_vitaes"
+  add_foreign_key "curriculum_vitae_jobs", "curriculum_vitaes"
+  add_foreign_key "curriculum_vitae_jobs", "jobs"
   add_foreign_key "curriculum_vitaes", "users"
   add_foreign_key "jobs", "careers"
   add_foreign_key "jobs", "organizations"
   add_foreign_key "jobs", "provinces"
   add_foreign_key "notifications", "users"
-  add_foreign_key "organization_curriculum_vitaes", "curriculum_vitaes"
-  add_foreign_key "organization_curriculum_vitaes", "organizations"
+  add_foreign_key "organization_users", "organizations"
+  add_foreign_key "organization_users", "users"
   add_foreign_key "taggings", "tags"
 end

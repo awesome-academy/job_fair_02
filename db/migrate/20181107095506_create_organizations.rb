@@ -12,6 +12,7 @@ class CreateOrganizations < ActiveRecord::Migration[5.2]
       t.string :website
       t.integer :founded
       t.string :form_cv
+      t.boolean :verified, default: false
 
       t.timestamps
     end
