@@ -15,3 +15,19 @@ en:
       email: "info@example.com"
       phone: "+ 01 234 567 88"
       fax: "+ 01 234 567 89"
+  users:
+    registrations:
+      signup: "Sign up"
+      submit: "Submit"
+    sessions:
+      new:
+        login: "Login"
+        email: "Email"
+        password: "Password"
+        remember: "Remember me?"
+        dont_account: "Don't have an account?"
+        forgot_password: "Forgot Password?"
+    shared:
+      links:
+        login: "Login"
+        signup: "Sign up"
