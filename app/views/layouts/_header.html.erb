@@ -14,11 +14,18 @@
             <%= link_to t(".createCV"), "#" %>
           </li>
           <li class="nav-item  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
-            <%= link_to t(".createJob"), "#" %>
+            <%= link_to t(".createJob"), new_job_path %>
           </li>
         </ul>
-        <%= link_to t(".signup"), "#", class: "btn w3ls-btn text-uppercase font-weight-bold d-block" %>
-        <%= link_to t(".login"), "#", class: "btn w3ls-btn btn-2 ml-lg-1 text-uppercase font-weight-bold d-block" %>
+        <% if user_signed_in? %>
+          <%= link_to t(".logout"), destroy_user_session_path, method: :delete,
+            class: "btn w3ls-btn btn-2  text-uppercase font-weight-bold d-block" %>
+        <% else %>
+          <%= link_to t(".signup"), "#",
+          class: "btn w3ls-btn text-uppercase font-weight-bold d-block" %>
+          <%= link_to t(".login"), new_user_session_path,
+            class: "btn w3ls-btn btn-2 ml-lg-1 text-uppercase font-weight-bold d-block" %>
+        <% end %>
       </div>
     </nav>
   </div>
