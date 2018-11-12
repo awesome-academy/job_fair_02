@@ -1,0 +1,41 @@
+<% provide:title, t(".title") %>
+<h1><%= t ".title" %></h1>
+
+<div class="row justify-content-md-center">
+  <div class="col-md-6">
+    <%= form_with model: @curriculum_vitae, local: true do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= f.label :industry %>
+      <%= f.text_field :industry, class: "form-control" %>
+
+      <%= f.label :target %>
+      <%= f.text_area :target, class: "form-control" %>
+
+      <%= f.label :experience %>
+      <%= f.text_field :experience, class: "form-control" %>
+
+      <%= f.label :skill %>
+      <%= f.text_field :skill, class: "form-control" %>
+
+      <%= f.label :language %>
+      <%= f.text_field :language, class: "form-control" %>
+
+      <%= f.check_box :public, class: "checkbox", checked: true %> <%= t ".public" %>
+
+      <br>
+      <h5><strong><%= t ".your_options" %></strong></h5><br>
+
+      <div id="curriculum_vitae_details">
+        <%= f.fields_for :curriculum_vitae_details do |curriculum_vitae_detail| %>
+          <%= render "curriculum_vitae_detail_fields", f: curriculum_vitae_detail %>
+        <% end %>
+        <strong>
+          <%= link_to_add_association t(".add"), f, :curriculum_vitae_details %>
+        </strong>
+      </div>
+      <br>
+      <%= f.submit t(".create"), class: "form-control btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

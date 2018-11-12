@@ -1,0 +1,28 @@
+.content{
+  margin: 70px;
+}
+
+.content h1{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.form-control{
+  margin-bottom: 15px;
+}
+
+.checkbox {
+  margin: -10px 0 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px;
+  }
+}

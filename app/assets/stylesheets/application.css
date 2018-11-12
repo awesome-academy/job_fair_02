@@ -13,4 +13,5 @@
  *= require bootstrap.min
  *= require style
  *= require_self
+ *= require custom
  */
