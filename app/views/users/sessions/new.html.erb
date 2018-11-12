@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+  <div class="col-md-6 pt-5">
+    <center><h3><%= t ".login" %></h3></center>
+    <div class="modal-body">
+      <%= form_for resource, as: resource_name,
+        url: session_path(resource_name) do |f| %>
+        <div class="form-group">
+          <label for="recipient-name" class="col-form-label"><%= t ".email" %>
+          </label>
+          <%= f.email_field :email, autofocus: true,
+            class: "form-control field" %>
+        </div>
+        <div class="form-group">
+          <label for="password" class="col-form-label"><%= t ".password" %>
+          </label>
+          <%= f.password_field :password, class: "form-control field" %>
+        </div>
+        <div class="right-w3l">
+          <div class="actions">
+            <%= f.submit t(".login"), class: "form-control bg-theme" %>
+          </div>
+        </div>
+        <div class="row sub-w3l my-3">
+          <div class="col sub-w3ltd">
+            <% if devise_mapping.rememberable? %>
+              <%= f.check_box :remember_me %>
+            <% end %>
+            <label for="brand1" class="text-dark">
+              <span></span><%= t ".remember" %></label>
+          </div>
+          <div class="col forgot-w3l text-right">
+            <%= link_to t(".forgot_password"), "#", class: "text-dark" %>
+          </div>
+        </div>
+        <p class="text-center dont-do"><%= t ".dont_account" %>
+          <%= render "users/shared/links" %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
