@@ -20,6 +20,8 @@
           <% end %>
         </ul>
         <% if user_signed_in? %>
+          <%= link_to current_user.name, current_user,
+            class: "btn w3ls-btn text-uppercase font-weight-bold d-block" %>
           <%= link_to t(".logout"), destroy_user_session_path, method: :delete,
             class: "btn w3ls-btn btn-2  text-uppercase font-weight-bold d-block" %>
         <% else %>

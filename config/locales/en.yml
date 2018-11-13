@@ -61,6 +61,8 @@ en:
       links:
         login: "Login"
         signup: "Sign up"
+    show:
+      listCV: "List curriculum vitaes"
   jobs:
     new:
       choose_career: "Choose career"
@@ -98,6 +100,13 @@ en:
     create:
       failed: "Create failed!"
       success: "Create successfully!"
+    show:
+      not_found: "Not found this CV"
+      target: "Target"
+      experience: "Experience"
+      skill: "Skill"
+      language: "Language"
+      not_permit: "You can't see this curriculum vitae"
   error:
     contain: "Contain"
     errors: "errors"

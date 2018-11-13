@@ -1,5 +1,6 @@
 class CurriculumVitaesController < ApplicationController
   before_action :authenticate_user!, only: %i(new create)
+  before_action :find_cv, :cv_public, only: %i(show)
 
   def new
     @curriculum_vitae = current_user.curriculum_vitaes.new
@@ -18,7 +19,25 @@ class CurriculumVitaesController < ApplicationController
     end
   end
 
+  def show; end
+
   private
+
+  def cv_public
+    @details = @cv.curriculum_vitae_details
+
+    return if @cv.public? || user_signed_in? && @cv.user_id == current_user.id
+    flash[:danger] = t ".not_permit"
+    redirect_to root_path
+  end
+
+  def find_cv
+    @cv = CurriculumVitae.find_by id: params[:id]
+
+    return if @cv
+    flash[:danger] = t ".not_found"
+    redirect_to root_path
+  end
 
   def cv_params
     params.require(:curriculum_vitae).permit CurriculumVitae::CURRICULUM_VITAE_PARAMS
