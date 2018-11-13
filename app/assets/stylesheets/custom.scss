@@ -1,15 +1,13 @@
 @import 'color';
 
-.content{
-  margin: 70px;
-}
-
-.content h1{
+.content h1 {
+  margin: 30px 0;
   text-align: center;
-  margin-bottom: 50px;
+  color: $blue;
+  font-weight: bold;
 }
 
-.form-control{
+.form-control {
   margin-bottom: 15px;
 }
 
@@ -33,6 +31,10 @@
   p {
     display: inline;
   }
+
+  i {
+    color: $green;
+  }
 }
 
 .company {
@@ -41,58 +43,31 @@
   }
 }
 
-#burst-12 {
-  background: red;
-  width: 25px;
-  height: 25px;
+.flag-new {
+  width: 34px;
+  height: 45px;
+  margin: 0 auto;
+  padding-top: 5px;
   position: relative;
-  text-align: center;
-}
-
-#burst-12:before,
-#burst-12:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background: red;
-}
-
-#burst-12:before {
-  transform: rotate(30deg);
-}
-
-#burst-12:after {
-  transform: rotate(60deg);
-}
-
-.base {
-  position: relative;
-  z-index: 1;
-}
-
-.text {
-  position: absolute;
-  z-index: 2;
-  top: 28px;
-  left: 330px;
+  background: $red-new;
   color: white;
-  font-weight: bold;
-  font-style: italic;
   font-size: 10px;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-.text-expired {
+.flag-new:after {
+  content: ' ';
   position: absolute;
-  z-index: 2;
-  top: 28px;
-  left: 330px;
-  color: white;
-  font-weight: bold;
-  font-style: italic;
-  font-size: 8px;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 13px solid white;
+  border-left: 17px solid transparent;
+  border-right: 17px solid transparent;
 }
 
 .flag {
@@ -101,7 +76,7 @@
   margin: 0 auto;
   padding-top: 15px;
   position: relative;
-  background: $blue;
+  background: $red-new;
   color: white;
   font-size: 11px;
   letter-spacing: 0.2em;
@@ -123,13 +98,13 @@
 }
 
 .media-img {
-  float: left;
+  text-align: center;
 }
 
 .media-img img {
-  line-height: 100px;
-  height: 100px;
-  width: 100px;
+  line-height: 200px;
+  height: 200px;
+  width: 200px;
   text-align: center;
   font-size: 17px;
   border-radius: 50%;
@@ -141,4 +116,71 @@
   a {
     width: 200px;
   }
+}
+
+.search_job {
+  color: white;
+  background-color: $blue;
+  font-weight: bold;
+}
+
+.info-icon {
+  text-align: center;
+  letter-spacing: 15px;
+
+  .facebook {
+    color: $blue-facebook;
+  }
+
+  .linkedin {
+    color: $blue-linkedin;
+  }
+
+  .skype {
+    color: $blue-skype;
+  }
+
+  .google {
+    color: $red-google;
+  }
+
+  .youtube {
+    color: $red-youtube;
+  }
+}
+
+.job_info {
+  color: $green;
+}
+
+.user-info {
+
+  margin: 30px 80px;
+  
+  i {
+    color: $green;
+    padding-right: 10px;
+  }
+}
+
+.cv-users{
+  font-size: 20px;
+
+  i {
+    color: $green;
+    margin-bottom: 20px;
+  }
+}
+
+.list-group-item {
+    color:$blue;
+}
+
+.list-group-item:hover {
+  padding-left: 10px;
+  color: $green;
+}
+
+.home {
+  margin: 70px;
 }

@@ -1,30 +1,50 @@
 <% provide :title, @user.name %>
+<h2 class="text-center text-uppercase font-weight-bold mb-5"><%= @user.name %></h2>
 <div class="row">
-  <aside class="col-lg-2">
-    <div class="entry">
-      <div class="media-img">
-        <%= image_tag (@user.avatar or "profile_image.jpg") %>
-      </div>
-      <div class="self">
-        <h1 class="name"><span><%= @user.name %></span></h1><br>
-        <ul>
-          <i class="fa fa-transgender"></i>  <%= @user.gender %><br>
-          <i class="fa fa-birthday-cake" aria-hidden="true"></i> <%= @user.birthday %>
-          <li class="ad"><%= @user.address %></li>
-          <li class="mail"><%= @user.email %></li>
-          <li class="tel"><%= @user.phone %></li>
-        </ul>
-      </div>
+  <div class="col-lg-4">
+    <div class="media-img">
+      <%= image_tag (@user.avatar or "profile_image.jpg") %>
     </div>
-  </aside>
-  <div class="col-lg-10 line_left">
-    <div class="entry">
+    <div class="user-info">
+      <ul>
+        <i class="fa fa-transgender"></i>
+        <%= @user.gender %><br>
+
+        <i class="fa fa-birthday-cake"></i>
+        <%= l(@user.birthday, format: :short) %><br>
+
+        <i class="fa fa-home"></i>
+        <%= @user.address %><br>
+
+        <i class="fa fa-envelope"></i>
+        <%= @user.email %><br>
+
+        <i class="fa fa-phone"></i>
+        <%= @user.phone %><br>
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-8">
       <% if @user.curriculum_vitaes.any? %>
-        <ol class="list-group">
-          <li class="list-group-item "><%= t ".listCV" %></li>
-          <%= render @user.curriculum_vitaes %>
-        </ol>
+        <ul>
+          <li class="cv-users">
+            <i class="fa fa-user fa-2x"></i>
+            <%= t ".listCV" %>
+          </li>
+          <li><%= render @user.curriculum_vitaes %></li>
+        </ul>
       <% end %>
-    </div>
+      <br>
+      <% if @user.organizations.any? %>
+        <hr><br>
+        <ul>
+          <li class="cv-users">
+            <i class="fa fa-building-o fa-2x"></i>
+            <%= t ".list_organizations" %>
+          </li>
+          <p><%= render @user.organizations %></p>
+        </ul>
+      <% end %>
+      <br>
   </div>
 </div>

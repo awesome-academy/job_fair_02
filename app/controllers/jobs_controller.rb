@@ -1,9 +1,11 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, :support, only: %i(new create)
-  before_action :find_job, :support, only: :show
+  before_action :authenticate_user!, only: %i(new create)
+  before_action :support, only: %i(new create index show)
+  before_action :find_job, only: %i(show)
 
   def index
-    @jobs = Job.job_expired.order_job.page(params[:page]).per Settings.per_sheet
+    @ransack = Job.select_job.job_expired.order_job.ransack params[:q]
+    @jobs = @ransack.result.page(params[:page]).per Settings.per_sheet
   end
 
   def new

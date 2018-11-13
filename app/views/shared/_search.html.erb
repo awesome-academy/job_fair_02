@@ -1,0 +1,37 @@
+<div class="left_widget">
+<%= search_form_for @ransack do |f| %>
+
+  <h5 class="font-weight-bold text-center text-uppercase mb-3">
+    <%= t ".search_job"%></h5>
+
+    <%= f.text_field :title_cont, class: "form-control",
+      placeholder: t(".title") %>
+
+    <%= f.select :career_id_eq,
+      options_for_select(@support.career_options),
+      {include_blank: t(".choose_career")}, {class: "form-control"} %>
+
+  <div class="form-row">
+    <div class="col-md-6">
+      <%= f.select :age_from_lteq,
+        options_for_select(Settings.age_from..Settings.age_to),
+        {include_blank: t(".age_from")}, {class: "form-control"} %>
+    </div>
+    <div class="col-md-6">
+      <%= f.select :age_to_gteq,
+        options_for_select(Settings.age_from..Settings.age_to),
+        {include_blank: t(".age_to")}, {class: "form-control"} %>
+    </div>
+  </div>
+  
+    <%= f.text_field :skill_cont, class: "form-control",
+      placeholder: t(".skill") %>
+
+    <%= f.text_field :work_address_cont, class: "form-control",
+      placeholder: t(".work_address") %>
+
+    <button type="submit" 
+      class="btn btn-w3ltd btn-block w-100 bg-theme font-weight-bold">
+    <span class="fa fa-search"></span>
+<% end %>
+</div>

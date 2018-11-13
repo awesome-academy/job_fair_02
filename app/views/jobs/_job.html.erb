@@ -2,8 +2,10 @@
   <div class="e-desc">
     <% if new_job? job %>
       <span class="float-right">
-        <p id="burst-12" class="base"><p class="text text-uppercase"><%= t ".new"%></p></p>
+        <p class="flag-new text-uppercase"><%= t".new"%></p>
       </span>
+      <h6 class="text-uppercase"><%= link_to job.title, job %></h6>
+    <% else %>
       <h6 class="text-uppercase"><%= link_to job.title, job %></h6>
     <% end %>
     <hr>

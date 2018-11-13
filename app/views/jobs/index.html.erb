@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-4">
+      <%= render "shared/search" %>
     </div>
     <div class="col-lg-8">
       <div class="row">
@@ -10,9 +11,9 @@
           <p><%= t ".not_found" %></p>
         <% end %>
       </div>
+      <div class="row justify-content-center">
+        <%= paginate @jobs, theme: "twitter-bootstrap-3" %>
+      </div>
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <%= paginate @jobs, theme: "twitter-bootstrap-3" %>
   </div>
 </div>
