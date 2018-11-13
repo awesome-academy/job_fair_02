@@ -1,3 +1,5 @@
+@import 'color';
+
 .content{
   margin: 70px;
 }
@@ -26,3 +28,97 @@
     margin: 0 0 30px;
   }
 }
+
+.company_info {
+  p {
+    display: inline;
+  }
+}
+
+.company {
+  h5, h1 {
+    color: $green;
+  }
+}
+
+#burst-12 {
+  background: red;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  text-align: center;
+}
+
+#burst-12:before,
+#burst-12:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background: red;
+}
+
+#burst-12:before {
+  transform: rotate(30deg);
+}
+
+#burst-12:after {
+  transform: rotate(60deg);
+}
+
+.base {
+  position: relative;
+  z-index: 1;
+}
+
+.text {
+  position: absolute;
+  z-index: 2;
+  top: 28px;
+  left: 330px;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 10px;
+}
+
+.text-expired {
+  position: absolute;
+  z-index: 2;
+  top: 28px;
+  left: 330px;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 8px;
+} 
+
+.flag {
+  width: 112px;
+  height: 56px;
+  margin: 0 auto;
+  padding-top: 15px;
+  position: relative; 
+  background: $blue;
+  color: white;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.flag:after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 13px solid white;
+  border-left: 55px solid transparent;
+  border-right: 55px solid transparent;
+}
+

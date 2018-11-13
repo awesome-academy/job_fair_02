@@ -1,0 +1,6 @@
+module JobsHelper
+  def new_job? job
+    date = Date.current - job.created_at.to_date
+    return true if date < Settings.new_job
+  end
+end

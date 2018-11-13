@@ -15,9 +15,12 @@
     <div class="container content">
       <% if notice %>
         <p class="alert alert-success flash"><%= notice %></p>
-      <% end %>
-      <% if alert %>
+      <% elsif alert %>
         <p class="alert alert-danger flash"><%= alert %></p>
+      <% else %>
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %> flash"><%= message %></div>
+        <% end %>
       <% end %>
       <%= yield %>
     </div>

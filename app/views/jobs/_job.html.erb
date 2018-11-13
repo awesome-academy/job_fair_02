@@ -1,0 +1,36 @@
+<div class="col-sm-6 e-left">
+  <div class="e-desc">
+    <% if new_job? job %>
+      <span class="float-right">
+        <p id="burst-12" class="base"><p class="text text-uppercase"><%= t ".new"%></p></p>
+      </span>
+      <h6 class="text-uppercase"><%= link_to job.title, job %></h6>
+    <% end %>
+    <hr>
+    <ul class="desc-list">
+      <li>
+        <span><%= t ".company" %></span>
+        <%= job.organization.name %>
+      </li>
+      <% if user_signed_in? %>
+        <li>
+          <span><%= t ".salary" %></span>
+          <%= number_to_currency job.salary %>
+        </li>
+      <% end %>
+      <li>
+        <span><%= t ".experience" %></span>
+        <%= job.experience %>
+      </li>
+      <li>
+        <span><%= t ".address" %></span>
+        <%= job.province.name %>
+      </li>
+      <li>
+        <span><%= t ".expiration" %></span>
+        <%= l(job.expiration_date, format: :short) %>
+      </li>
+    </ul>
+    <%= link_to t(".detail"), job, class: "btn wthree-bnr-btn text-capitalize" %>
+  </div>
+</div>

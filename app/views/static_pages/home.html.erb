@@ -2,7 +2,19 @@
 <section class="employ-sec">
   <div class="container">
     <div class="title-sec-w3layouts_pvt text-center pt-4">
-      <span class="title-wthree">JOB FAIR</span>
+      <span class="title-wthree"><%= t "base_title" %></span>
+    </div>
+    <div class="row pt-lg-5">
+      <div class="col-lg-4">
+      </div>
+      <div class="col-lg-8">
+        <div class="row">
+          <%= render @jobs %>
+        </div>
+        <div class="row justify-content-center">
+          <%= paginate @jobs, theme: "twitter-bootstrap-3" %>
+        </div>
+      </div>
     </div>
   </div>
 </section>

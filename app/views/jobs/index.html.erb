@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+    </div>
+    <div class="col-lg-8">
+      <div class="row">
+        <% if @jobs.present? %>
+          <%= render @jobs %>
+        <% else %>
+          <p><%= t ".not_found" %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <%= paginate @jobs, theme: "twitter-bootstrap-3" %>
+  </div>
+</div>
