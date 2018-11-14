@@ -63,6 +63,7 @@ en:
         signup: "Sign up"
     show:
       listCV: "List curriculum vitaes"
+      list_organizations: "Organizations"
   jobs:
     new:
       choose_career: "Choose career"
@@ -84,8 +85,16 @@ en:
       choose: "Choose your CV"
       apply: "Apply"
     job:
+      company: "Company"
+      salaray: "Salary"
+      experience: "Experience"
+      address: "Address"
+      expiration: "Expiration"
+      detail: "Detail"
       new: "New"
       expired: "Expired"
+    index:
+      not_found: "Job not found!"
   number:
     currency:
       format:
@@ -131,3 +140,10 @@ en:
       previous: "&lsaquo;&lsaquo;"
       next: "&rsaquo;&rsaquo;"
       truncate: "&hellip;"
+  shared:
+    search:
+      search_job: "Search Job"
+      title: "Job title"
+      skill: "Skill"
+      work_address: "Work address"
+
