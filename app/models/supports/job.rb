@@ -17,4 +17,9 @@ class Supports::Job
   def organization_options
     @organization_options ||= @user.organizations.map{|p| [p.name, p.id]}
   end
+
+  def cv_options
+    @cv_options ||= @user.curriculum_vitaes.select(&:public?)
+                         .map{|p| [p.industry, p.id]}
+    end
 end

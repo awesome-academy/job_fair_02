@@ -42,7 +42,7 @@
         <p><%= @job.career.name %></p><br>
 
         <h5><%= t ".age" %></h5><hr>
-        
+
         <p class="float-left"><%= t ".from" %>&nbsp;</p>
         <p class="float-left"><%= @job.age_from %>&nbsp;&nbsp;</p>
 
@@ -74,6 +74,40 @@
 
         <h5><%= t ".expiration_date" %></h5><hr>
         <p><%= l(@job.expiration_date, format: :short) %></p><br>
+
+        <%= link_to t(".apply"), new_curriculum_vitae_job_path, class:
+          "btn wthree-bnr-btn text-capitalize", data: {toggle: "modal",
+            target: "#applyCV"} %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="applyCV" tabindex="-1" role="dialog"
+  aria-labelledby="login_or_apply" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-theme1">
+        <h5 class="modal-title" id="login_or_apply">
+          <% if !user_signed_in? %>
+            <%= t ".r_login" %>
+          <% else %>
+            <%= t ".select_cv" %>
+          <% end %>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% if !user_signed_in? %>
+        <div class="button_cn">
+          <%= link_to t(".signup"), "#", class: "btn btn-lg btn-warning" %>
+          <%= link_to t(".login"), new_user_session_path, class: "btn btn-lg btn-warning" %>
+        </div>
+        <% else %>
+          <%= render "apply" %>
+        <% end %>
       </div>
     </div>
   </div>

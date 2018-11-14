@@ -4,6 +4,9 @@ class Job < ApplicationRecord
   belongs_to :career
   has_many :taggings, as: :taggable
   has_many :tags, through: :taggings
+  has_many :curriculum_vitae_jobs
+  has_many :curriculum_vitaes, through: :curriculum_vitae_jobs,
+    dependent: :destroy
 
   validates :title, presence: true, length: {maximum: Settings.max_length_title}
   validates :age_from, :age_to, presence: true, numericality: true,
@@ -18,7 +21,6 @@ class Job < ApplicationRecord
     length: {maximum: Settings.max_length_description}
   validates :experience, presence: true,
     length: {maximum: Settings.max_length_experience}
-
 
   JOB_ATTRS = [:organization_id, :career_id, :province_id,
     :title, :age_from, :age_to, :salary, :work_address, :employment_type,
