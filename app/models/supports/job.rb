@@ -21,5 +21,5 @@ class Supports::Job
   def cv_options
     @cv_options ||= @user.curriculum_vitaes.select(&:public?)
                          .map{|p| [p.industry, p.id]}
-    end
+  end
 end

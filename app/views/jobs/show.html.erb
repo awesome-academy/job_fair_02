@@ -40,6 +40,12 @@
           <i class="fa fa-youtube-square fa-2x youtube"></i>
           <i class="fa fa-skype fa-2x skype"></i>
         </div>
+
+        <ul class="tags mt-3">
+          <li>
+            <%= render "shared/show_tag", show_tag: @job %>
+          </li>
+        </ul>
       </div>
 
       <div class="col-md-8 job_info">

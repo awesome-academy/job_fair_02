@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     resources :jobs
     resources :curriculum_vitaes
     resources :curriculum_vitae_jobs, only: %i(new create)
+    resources :tags, only: :show
   end
 end

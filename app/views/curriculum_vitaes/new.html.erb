@@ -1,5 +1,5 @@
 <% provide:title, t(".title") %>
-<h1><%= t ".title" %></h1>
+<h2 class="text-center text-uppercase mb-3"><%= t ".title" %></h2>
 
 <div class="row justify-content-md-center">
   <div class="col-md-6">
@@ -20,6 +20,11 @@
 
       <%= f.label :language %>
       <%= f.text_field :language, class: "form-control" %>
+
+      <div class="field form-group">
+        <%= f.label :tag_list %><br/>
+        <%= f.text_field :tag_list, class: "form-control" %>
+      </div>
 
       <%= f.check_box :public, class: "checkbox", checked: true %> <%= t ".public" %>
 

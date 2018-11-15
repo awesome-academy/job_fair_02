@@ -1,12 +1,11 @@
 class CurriculumVitae < ApplicationRecord
+  acts_as_taggable
   belongs_to :user
 
   has_many :curriculum_vitae_details, dependent: :destroy
   has_many :curriculum_vitae_jobs, dependent: :destroy
   has_many :jobs, through: :curriculum_vitae_jobs,
     dependent: :destroy
-  has_many :taggings, as: :taggable
-  has_many :tags, through: :taggings
 
   accepts_nested_attributes_for :curriculum_vitae_details, allow_destroy: true,
     reject_if: :all_blank
@@ -22,7 +21,7 @@ class CurriculumVitae < ApplicationRecord
     length: {maximum: Settings.max_length_lang}
 
   CURRICULUM_VITAE_PARAMS = [:industry, :target, :experience, :skill, :language,
-    :public, curriculum_vitae_details_attributes:
+    :public, :tag_list, curriculum_vitae_details_attributes:
       %i(id title content _destroy)].freeze
 
   delegate :avatar, :name, :address, :email, :phone, :gender, :birthday,

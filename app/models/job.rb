@@ -1,9 +1,8 @@
 class Job < ApplicationRecord
+  acts_as_taggable
   belongs_to :organization
   belongs_to :province
   belongs_to :career
-  has_many :taggings, as: :taggable
-  has_many :tags, through: :taggings
   has_many :curriculum_vitae_jobs
   has_many :curriculum_vitaes, through: :curriculum_vitae_jobs,
     dependent: :destroy
@@ -24,7 +23,8 @@ class Job < ApplicationRecord
 
   JOB_ATTRS = [:organization_id, :career_id, :province_id,
     :title, :age_from, :age_to, :salary, :work_address, :employment_type,
-    :skill, :level, :experience, :description, :expiration_date].freeze
+    :skill, :level, :experience, :description, :expiration_date,
+    :tag_list].freeze
 
   scope :select_job, (lambda do
     select :id, :title, :salary, :experience, :expiration_date,

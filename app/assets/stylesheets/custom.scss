@@ -184,3 +184,22 @@
 .home {
   margin: 70px;
 }
+
+ul.tags li a{
+  display: inline-block;
+  margin: 3px 5px;
+  border: 1px solid gainsboro;
+  padding: 3px 8px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: gray;
+}
+
+ul.tags li a:hover{
+  color: $blue;
+}
+
+.tag-cv {
+  margin-left: 220px !important;
+}

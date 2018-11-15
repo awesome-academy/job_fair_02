@@ -121,15 +121,22 @@ ActiveRecord::Schema.define(version: 2018_11_09_044229) do
 
   create_table "taggings", force: :cascade do |t|
     t.bigint "tag_id"
-    t.integer "taggable_id"
     t.string "taggable_type"
+    t.bigint "taggable_id"
+    t.string "tagger_type"
+    t.bigint "tagger_id"
+    t.string "context", limit: 128
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tag_id"], name: "index_taggings_on_tag_id"
+    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+    t.index ["taggable_type", "taggable_id"], name: "index_taggings_on_taggable_type_and_taggable_id"
+    t.index ["tagger_type", "tagger_id"], name: "index_taggings_on_tagger_type_and_tagger_id"
   end
 
   create_table "tags", force: :cascade do |t|
     t.string "name"
+    t.integer "taggings_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

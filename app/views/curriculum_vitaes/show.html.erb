@@ -45,7 +45,17 @@
             <h2><%= t ".language" %></h2>
             <p><%= @cv.language %></p>
           </div>
+
           <%= render @details %>
+
+          <div class="entry">
+            <h2><%= t ".tags" %></h2>
+            <ul class="tags tag-cv">
+              <li>
+                <%= render "shared/show_tag", show_tag: @cv %>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="clear"></div>
         <div class="paper-bottom"></div>
