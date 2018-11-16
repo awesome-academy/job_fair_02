@@ -2,12 +2,12 @@ class CurriculumVitaeJobsController < ApplicationController
   before_action :find_job, only: :create
 
   def create
-    @cv_job = @job.curriculum_vitae_jobs.build cv_job_params
+    command = CurriculumVitaeUpload.call current_user, @job, cv_job_params
 
-    if @cv_job.save
+    if command.success?
       flash[:success] = t ".success"
     else
-      flash[:danger] = t ".failed"
+      flash[:danger] = command.errors[:failed]
     end
     redirect_to @job
   end
@@ -23,6 +23,7 @@ class CurriculumVitaeJobsController < ApplicationController
   end
 
   def cv_job_params
-    params.require(:curriculum_vitae_job).permit :job_id, :curriculum_vitae_id
+    params.require(:curriculum_vitae_job).permit :curriculum_vitae_id,
+      :cv_upload
   end
 end

@@ -7,7 +7,7 @@ class CreateCurriculumVitaes < ActiveRecord::Migration[5.2]
       t.string :experience
       t.string :skill
       t.string :language
-      t.string :cv_upload
+      t.attachment :cv_upload
       t.boolean :public
 
       t.timestamps
