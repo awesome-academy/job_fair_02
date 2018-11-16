@@ -20,6 +20,8 @@ class Job < ApplicationRecord
     length: {maximum: Settings.max_length_description}
   validates :experience, presence: true,
     length: {maximum: Settings.max_length_experience}
+  validates_numericality_of :age_to, greater_than: :age_from
+  validate :check_expried
 
   JOB_ATTRS = [:organization_id, :career_id, :province_id,
     :title, :age_from, :age_to, :salary, :work_address, :employment_type,

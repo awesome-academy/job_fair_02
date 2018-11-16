@@ -19,7 +19,19 @@ class CurriculumVitaesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "#{@cv.user.name}_#{Time.now}",
+          orientation: "Portrait",
+          page_size: "A4",
+          template: "curriculum_vitaes/curriculum_vitae.html.erb",
+          encoding: "UTF-8",
+          layout: "pdf"
+      end
+    end
+  end
 
   private
 

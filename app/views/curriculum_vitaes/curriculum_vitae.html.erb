@@ -1,0 +1,51 @@
+<div class="body">
+  <div class="container">
+    <div class="entry">
+      <% if @cv.avatar.present? %>
+        <%= image_tag @cv.avatar%>
+      <% else %>
+        <div class="no-img"></div>
+      <% end %>
+      <div class="self">
+        <h1><%= @cv.name %></h1>
+        <h1 class="name mb-3"><span><%= @cv.industry %></span></h1>
+        <ul>
+          <li>&#xf1ad;
+            <%= @cv.address %>
+          </li>
+          <li>&#xf0e0;
+            <%= @cv.email %>
+          </li>
+          <li>&#xf098;
+            <%= @cv.phone %>
+          </li>
+          <li>&#xf1fd;
+            <%= l(@cv.birthday, format: :short) %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <h2><%= t ".target" %></h2>
+      <p><%= @cv.target %></p>
+    </div>
+
+    <div class="entry">
+      <h2><%= t ".experience" %></h2>
+      <p><%= @cv.experience %></p>
+    </div>
+
+    <div class="entry">
+      <h2><%= t ".skill" %></h2>
+      <p><%= @cv.skill %></p>
+    </div>
+
+    <div class="entry">
+      <h2><%= t ".language" %></h2>
+      <p><%= @cv.language %></p>
+    </div>
+
+    <%= render @details %>
+  </div>
+</div>

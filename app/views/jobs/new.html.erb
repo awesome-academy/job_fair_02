@@ -26,11 +26,15 @@
         </div>
         <div class="form-group col-md-4">
           <%= f.label :age_from %>
-          <%= f.text_field :age_from, class: "form-control" %>
+          <%= f.select :age_from,
+            options_for_select(Settings.age_from..Settings.age_to),
+            {include_blank: t(".age_from")}, {class: "form-control"} %>
         </div>
         <div class="form-group col-md-4">
           <%= f.label :age_to %>
-          <%= f.text_field :age_to, class: "form-control" %>
+          <%= f.select :age_to,
+            options_for_select(Settings.age_from..Settings.age_to),
+            {include_blank: t(".age_to")}, {class: "form-control"} %>
         </div>
       </div>
 
