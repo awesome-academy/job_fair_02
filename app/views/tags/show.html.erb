@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="title-sec-w3layouts_pvt text-center mb-5">
+    <span class="title-wthree"><%= t ".search_result" %></span>
+  </div>
+  <div>
+    <% if @jobs.present? %>
+      <h3><%= t ".job_tagged"%></h3><br>
+      <div id="job-paginator">
+        <%= paginate @jobs, remote: true, param_name: :jobs,
+          theme: "twitter-bootstrap-3" %>
+      </div> 
+      <div id="jobs" class="row">
+        <%= render @jobs %>
+      </div>
+    <% end %>
+    <% if @curriculum_vitaes.present? %>
+      <h3><%= t ".cv_tagged"%></h3><br>
+      <div id="cv-paginator" class="mb-4">
+        <%= paginate @curriculum_vitaes, remote: true, param_name: :curriculum_vitaes,
+          theme: "twitter-bootstrap-3" %>
+      </div> 
+      <div id="cvs" class="row">
+        <%= render @curriculum_vitaes %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

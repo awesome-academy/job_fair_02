@@ -146,4 +146,10 @@ en:
       title: "Job title"
       skill: "Skill"
       work_address: "Work address"
-
+  tags:
+    show:
+      search_result: "search result"
+      job_not_found: "Job not found!"
+      cv_not_found: "Curriculum vitae not found!"
+      cv_tagged: "Curriculum Vitaes Tagged"
+      job_tagged: "Jobs Tagged"

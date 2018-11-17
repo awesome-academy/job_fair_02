@@ -82,6 +82,11 @@
         <%= f.date_field :expiration_date, class: "form-control" %>
       </div>
 
+      <div class="field form-group">
+        <%= f.label :tag_list %><br/>
+        <%= f.text_field :tag_list, class: "form-control" %>
+      </div>
+
       <center><%= f.submit t(".create_job"), class: "btn btn-primary mb-3" %></center>
     <% end %>
   </div>
