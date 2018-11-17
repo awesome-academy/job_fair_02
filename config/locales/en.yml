@@ -104,7 +104,7 @@ en:
   date:
     formats:
       short: "%d/%m/%Y"
-  age_to: "Age to must older than Age from"
+  age_to: "must older than Age from"
   expiration_date: "must be later than the current date"
   curriculum_vitaes:
     new:

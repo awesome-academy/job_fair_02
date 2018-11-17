@@ -61,6 +61,13 @@
         <div class="paper-bottom"></div>
       </div>
     </div>
-    <div class="wrapper-bottom"></div>
+    <div class="wrapper-bottom">
+    </div>
+    <div class="text-center">
+      <% if user_signed_in? %>
+        <%= link_to t(".export"), curriculum_vitae_path + ".pdf",
+          class: "btn wthree-bnr-btn text-capitalize" %>
+      <% end %>
+    </div>
   </div>
 </div>
