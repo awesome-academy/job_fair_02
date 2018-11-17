@@ -7,6 +7,7 @@ class CurriculumVitae < ApplicationRecord
   has_many :jobs, through: :curriculum_vitae_jobs,
     dependent: :destroy
 
+  has_attached_file :cv_upload
   accepts_nested_attributes_for :curriculum_vitae_details, allow_destroy: true,
     reject_if: :all_blank
 
@@ -19,6 +20,8 @@ class CurriculumVitae < ApplicationRecord
   validates :skill, presence: true, length: {maximum: Settings.max_length_level}
   validates :language, presence: true,
     length: {maximum: Settings.max_length_lang}
+  validates_attachment :cv_upload,
+    content_type: {content_type: "application/pdf"}
 
   CURRICULUM_VITAE_PARAMS = [:industry, :target, :experience, :skill, :language,
     :public, :tag_list, curriculum_vitae_details_attributes:

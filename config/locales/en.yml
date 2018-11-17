@@ -84,6 +84,7 @@ en:
       select: "Select your CV"
       choose: "Choose your CV"
       apply: "Apply"
+      upload: "Or upload your CV"
     job:
       company: "Company"
       salaray: "Salary"
@@ -128,7 +129,6 @@ en:
   curriculum_vitae_jobs:
     create:
       success: "Applied successful"
-      failed: "Apply failed"
       not_found: "Not found this job"
   error:
     contain: "Contain"
@@ -153,3 +153,7 @@ en:
       cv_not_found: "Curriculum vitae not found!"
       cv_tagged: "Curriculum Vitaes Tagged"
       job_tagged: "Jobs Tagged"
+  cant_select_and_upload: "You can't select and upload file"
+  upload_failed: "Upload failed"
+  cv_applied: "This CV has applied before. Please select another CV"
+  applied_failed: "Apply failed"

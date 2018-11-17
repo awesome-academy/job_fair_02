@@ -3,5 +3,9 @@
   <%= f.label :curriculum_vitae_id, t(".select") %>
   <%= f.select :curriculum_vitae_id, options_for_select(@support.cv_options),
     {include_blank: t(".choose")}, {class: "form-control"} %>
+
+  <%= f.label :cv_upload, t(".upload") %>
+  <%= f.file_field :cv_upload, accept: "application/pdf", class: "form-control" %>
+
   <%= f.submit t(".apply"), class: "btn btn-primary form-control" %>
 <% end %>
