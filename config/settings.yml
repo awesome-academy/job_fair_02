@@ -21,3 +21,11 @@ age_from: 18
 age_to: 60
 per_sheet: 8
 new_job: 10
+size_avatar: 5000
+avatar_medium: "300x300"
+size_cv: 10
+type_avatar: ["image/jpeg", "image/gif", "image/png"]
+type_form: ["application/msword", "application/pdf", "application/zip"]
+url_form: "public/system/:basename.:extension"
+path_form: ":rails_root/public/system/:basename.:extension"
+

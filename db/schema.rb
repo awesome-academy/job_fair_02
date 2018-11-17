@@ -10,32 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_17_142121) do
+ActiveRecord::Schema.define(version: 2018_11_15_011929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "act_notifications", force: :cascade do |t|
-    t.string "target_type", null: false
-    t.bigint "target_id", null: false
-    t.string "notifiable_type", null: false
-    t.bigint "notifiable_id", null: false
-    t.string "key", null: false
-    t.string "group_type"
-    t.bigint "group_id"
-    t.integer "group_owner_id"
-    t.string "notifier_type"
-    t.bigint "notifier_id"
-    t.text "parameters"
-    t.datetime "opened_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["group_owner_id"], name: "index_act_notifications_on_group_owner_id"
-    t.index ["group_type", "group_id"], name: "index_act_notifications_on_group_type_and_group_id"
-    t.index ["notifiable_type", "notifiable_id"], name: "index_act_notifications_on_notifiable_type_and_notifiable_id"
-    t.index ["notifier_type", "notifier_id"], name: "index_act_notifications_on_notifier_type_and_notifier_id"
-    t.index ["target_type", "target_id"], name: "index_act_notifications_on_target_type_and_target_id"
-  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -136,7 +114,7 @@ ActiveRecord::Schema.define(version: 2018_11_17_142121) do
   create_table "organization_users", force: :cascade do |t|
     t.bigint "organization_id"
     t.bigint "user_id"
-    t.boolean "admin", default: false
+    t.boolean "admin", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["organization_id"], name: "index_organization_users_on_organization_id"
@@ -151,9 +129,15 @@ ActiveRecord::Schema.define(version: 2018_11_17_142121) do
     t.string "website"
     t.string "scales"
     t.text "description"
-    t.string "avatar"
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.integer "founded"
-    t.string "form_cv"
+    t.string "form_cv_file_name"
+    t.string "form_cv_content_type"
+    t.integer "form_cv_file_size"
+    t.datetime "form_cv_updated_at"
     t.boolean "verified", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -163,24 +147,6 @@ ActiveRecord::Schema.define(version: 2018_11_17_142121) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "subscriptions", force: :cascade do |t|
-    t.string "target_type", null: false
-    t.bigint "target_id", null: false
-    t.string "key", null: false
-    t.boolean "subscribing", default: true, null: false
-    t.boolean "subscribing_to_email", default: true, null: false
-    t.datetime "subscribed_at"
-    t.datetime "unsubscribed_at"
-    t.datetime "subscribed_to_email_at"
-    t.datetime "unsubscribed_to_email_at"
-    t.text "optional_targets"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["key"], name: "index_subscriptions_on_key"
-    t.index ["target_type", "target_id", "key"], name: "index_subscriptions_on_target_type_and_target_id_and_key", unique: true
-    t.index ["target_type", "target_id"], name: "index_subscriptions_on_target_type_and_target_id"
   end
 
   create_table "taggings", force: :cascade do |t|

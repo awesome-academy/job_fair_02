@@ -27,7 +27,7 @@ gem "wicked_pdf"
 gem "wkhtmltopdf-binary"
 
 group :development, :test do
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "pry-byebug", "~> 3.4"
 end
 
 group :development do

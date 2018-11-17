@@ -1,0 +1,69 @@
+<% provide :title, t(".title") %>
+<center><h1 class="text-uppercase mt-3"><%= t ".create_organization" %></h1></center>
+
+<div class="row justify-content-center mt-5">
+  <div class="col-md-8">
+
+    <%= form_with model: @organization, multipart: true, local: true do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <div class="form-group">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <%= f.label :email %>
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
+        <div class="form-group col-md-4">
+          <%= f.label :phone %>
+          <%= f.text_field :phone, class: "form-control" %>
+        </div>
+        <div class="form-group col-md-4">
+          <%= f.label :website %>
+          <%= f.text_field :website, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <%= f.label :scales %>
+          <%= f.text_field :scales, class: "form-control" %>
+        </div>
+        <div class="form-group col-md-6">
+          <%= f.label :founded %>
+          <%= f.text_field :founded, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :address %>
+        <%= f.text_field :address, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :form_cv %><br/>
+        <%= f.file_field :form_cv %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :avatar %><br/>
+        <%= f.file_field :avatar %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :tag_list %><br/>
+        <%= f.text_field :tag_list, class: "form-control" %>
+      </div>
+
+      <center><%= f.submit t(".title"), class: "btn btn-primary mb-3" %></center>
+    <% end %>
+  </div>
+</div>

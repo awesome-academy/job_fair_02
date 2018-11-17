@@ -22,11 +22,18 @@
         <% if user_signed_in? %>
           <%= link_to current_user.name, current_user,
             class: "btn w3ls-btn text-uppercase font-weight-bold d-block" %>
-          <%= link_to t(".logout"), destroy_user_session_path, method: :delete,
-            class: "btn w3ls-btn btn-2  text-uppercase font-weight-bold d-block" %>
+          <li class="dropdown nav-item mr-lg-3 mt-lg-0 mt-sm-4 mt-3 list-group float-right">
+            <%= link_to "#", class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
+              <b class="caret"></b>
+            <% end %>
+            <ul class="dropdown-menu">
+              <li><%= link_to t(".organization"), new_organization_path %></li>
+              <li><%= link_to t(".logout"), destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
         <% else %>
           <%= link_to t(".signup"), "#",
-          class: "btn w3ls-btn text-uppercase font-weight-bold d-block" %>
+            class: "btn w3ls-btn text-uppercase font-weight-bold d-block" %>
           <%= link_to t(".login"), new_user_session_path,
             class: "btn w3ls-btn btn-2 ml-lg-1 text-uppercase font-weight-bold d-block" %>
         <% end %>
