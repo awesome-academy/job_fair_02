@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_15_011929) do
+ActiveRecord::Schema.define(version: 2018_11_19_015846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,20 @@ ActiveRecord::Schema.define(version: 2018_11_15_011929) do
     t.index ["user_id"], name: "index_curriculum_vitaes_on_user_id"
   end
 
+  create_table "follows", force: :cascade do |t|
+    t.string "followable_type", null: false
+    t.bigint "followable_id", null: false
+    t.string "follower_type", null: false
+    t.bigint "follower_id", null: false
+    t.boolean "blocked", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followable_id", "followable_type"], name: "fk_followables"
+    t.index ["followable_type", "followable_id"], name: "index_follows_on_followable_type_and_followable_id"
+    t.index ["follower_id", "follower_type"], name: "fk_follows"
+    t.index ["follower_type", "follower_id"], name: "index_follows_on_follower_type_and_follower_id"
+  end
+
   create_table "jobs", force: :cascade do |t|
     t.bigint "career_id"
     t.bigint "organization_id"
@@ -114,7 +128,7 @@ ActiveRecord::Schema.define(version: 2018_11_15_011929) do
   create_table "organization_users", force: :cascade do |t|
     t.bigint "organization_id"
     t.bigint "user_id"
-    t.boolean "admin", default: true
+    t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["organization_id"], name: "index_organization_users_on_organization_id"

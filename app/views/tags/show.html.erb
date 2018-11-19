@@ -1,14 +1,25 @@
 <div class="container">
   <div class="title-sec-w3layouts_pvt text-center mb-5">
     <span class="title-wthree"><%= t ".search_result" %></span>
+    <div class="tag-follow">
+      <h2 class="float-left tag"><i class="fa fa-tags"></i> <%= @tag.name %></h2>
+      <% if user_signed_in? %>
+        <% if current_user.following? @tag %>
+          <%= button_to t(".unfollow"), {action: "unfollow", id: @tag.name}, method: "post", class: "btn btn-warning", remote: true %>
+        <% else %>
+          <%= button_to t(".follow"), {action: "follow", id: @tag.name}, method: "post", class: "btn btn-warning", remote: true %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
+  <br>
   <div>
     <% if @jobs.present? %>
       <h3><%= t ".job_tagged"%></h3><br>
       <div id="job-paginator">
         <%= paginate @jobs, remote: true, param_name: :jobs,
           theme: "twitter-bootstrap-3" %>
-      </div> 
+      </div>
       <div id="jobs" class="row">
         <%= render @jobs %>
       </div>
@@ -18,9 +29,9 @@
       <div id="cv-paginator" class="mb-4">
         <%= paginate @curriculum_vitaes, remote: true, param_name: :curriculum_vitaes,
           theme: "twitter-bootstrap-3" %>
-      </div> 
+      </div>
       <div id="cvs" class="row">
-        <%= render @curriculum_vitaes %>
+        <%= render @curriculum_vitaes %>  
       </div>
     <% end %>
     </div>
