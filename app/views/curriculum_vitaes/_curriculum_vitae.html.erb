@@ -1,3 +1,7 @@
-<% if curriculum_vitae.public? || @user.current_user?(current_user) && !curriculum_vitae.cv_upload %>
+<% if curriculum_vitae.public? || curriculum_vitae.user.current_user?(current_user) && !curriculum_vitae.cv_upload %>
   <%= link_to curriculum_vitae.industry, curriculum_vitae, class: "list-group-item" %>
+<% end %>
+<% if curriculum_vitae.cv_upload.present? %>
+  <%= link_to curriculum_vitae.user.name, curriculum_vitae.cv_upload.url(:original),
+    target: "_blank", class: "list-group-item"%>
 <% end %>

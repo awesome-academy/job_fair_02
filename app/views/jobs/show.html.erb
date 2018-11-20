@@ -47,6 +47,12 @@
             <%= render "shared/show_tag", show_tag: @job %>
           </li>
         </ul>
+
+        <% if user_signed_in? && user_organization?(current_user, @job.organization_id) %>
+          <h3 class="mt-5 mb-3 cv_apply font-weight-bold text-uppercase">
+            <%= t".cv_applied" %>&nbsp;(<%= @job.curriculum_vitaes.count %>)</h3>
+          <%= render @job.curriculum_vitaes %>
+        <%end %>
       </div>
 
       <div class="col-md-8 job_info">

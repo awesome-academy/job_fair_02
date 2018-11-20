@@ -92,6 +92,7 @@ en:
       select_cv: "Select your CV"
       signup: "Sign up"
       login: "Login"
+      cv_applied: "CV Applied"
     apply:
       select: "Select your CV"
       choose: "Choose your CV"
@@ -182,3 +183,4 @@ en:
       download_here: "Download here:"
       download: "Download"
       job_was_post: "Jobs was post"
+  not_exist: "Page do not exist"
