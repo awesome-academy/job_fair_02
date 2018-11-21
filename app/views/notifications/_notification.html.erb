@@ -1,0 +1,14 @@
+<li class="list-item border bottom">
+  <a class="media-hover p-15">
+    <% if notification.read? %>
+    <div class="info">
+    <% else %>
+    <div class="info unread">
+    <% end %>
+      <span class="title">
+        <%= link_to notification.content, notification %>
+      </span>
+      <span class="sub-title"><%= time_ago_in_words notification.created_at %> ago</span>
+    </div>
+  </a>
+</li>

@@ -1,5 +1,7 @@
-<% if curriculum_vitae.public? || curriculum_vitae.user.current_user?(current_user) && !curriculum_vitae.cv_upload %>
-  <%= link_to curriculum_vitae.industry, curriculum_vitae, class: "list-group-item" %>
+<% if curriculum_vitae.public? || curriculum_vitae.user.current_user?(current_user) && !curriculum_vitae.cv_upload.present? %>
+  <div class="col-md-6">
+    <%= link_to curriculum_vitae.industry, curriculum_vitae, class: "list-group-item" %>
+  </div>
 <% end %>
 <% if curriculum_vitae.cv_upload.present? %>
   <%= link_to curriculum_vitae.user.name, curriculum_vitae.cv_upload.url(:original),

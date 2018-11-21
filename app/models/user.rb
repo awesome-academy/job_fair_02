@@ -22,6 +22,8 @@ class User < ApplicationRecord
   validates :address, presence: true,
     length: {maximum: Settings.max_length_address}
 
+  acts_as_follower
+
   def current_user? user
     self == user
   end

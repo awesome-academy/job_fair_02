@@ -18,14 +18,14 @@
       phone: "0123456789",
       address: "Hà Nội",
       scales: "50 người",
-      description: FFaker::Lorem.sentence(rand(20..30)),
+      description: FFaker::Lorem.sentence(1),
       founded: 2012
     )
   end
 #Career
 50.times do |n|
   Career.create!(name: FFaker::Name.name,
-      description: FFaker::Lorem.sentence(rand(20..30))
+      description: FFaker::Lorem.sentence(20)
     )
 end
 #Province
@@ -56,9 +56,9 @@ end
     age_from: 20,
     age_to: 40,
     salary: 10000000,
-    work_address: FFaker::Lorem.sentence(rand(3)),
+    work_address: FFaker::Lorem.sentence(rand(2..3)),
     employment_type: "Full time",
-    skill: FFaker::Lorem.sentence(rand(10..30)),
+    skill: FFaker::Lorem.sentence(rand(10..20)),
     level: FFaker::Lorem.sentence(rand(5..10)),
     experience: "2 năm",
     description: FFaker::Lorem.sentence(20),
@@ -77,7 +77,7 @@ end
     age_from: 25,
     age_to: 35,
     salary: 20000000,
-    work_address: FFaker::Lorem.sentence(rand(3)),
+    work_address: FFaker::Lorem.sentence(rand(2..3)),
     employment_type: "Part time",
     skill: FFaker::Lorem.sentence(rand(10..30)),
     level: FFaker::Lorem.sentence(rand(5..10)),

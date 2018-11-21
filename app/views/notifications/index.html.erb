@@ -1,0 +1,9 @@
+<h3 class="text-center"><%= t ".noti" %></h3><br>
+<ul>
+  <li>
+    <%= render @notifications %>
+  </li>
+</ul>
+<div class="row justify-content-center">
+  <%= paginate @notifications, theme: "twitter-bootstrap-3" %>
+</div>

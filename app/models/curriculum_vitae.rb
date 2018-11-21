@@ -31,4 +31,18 @@ class CurriculumVitae < ApplicationRecord
 
   delegate :avatar, :name, :address, :email, :phone, :gender, :birthday,
     to: :user
+
+  after_create_commit :create_notification
+
+  private
+
+  def create_notification
+    self.tags.each do |tag_cv|
+      @tag = Tag.find_by id: tag_cv.id
+      @tag.followers.pluck(:id).each do |id|
+        Notification.create user_id: id, target_type: CurriculumVitae.name,
+          target_id: @tag.id, content: I18n.t(".noti_cv") << @tag.name
+      end
+    end
+  end
 end

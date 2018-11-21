@@ -36,11 +36,23 @@ class Job < ApplicationRecord
   scope :job_expired,
     ->{where(Job.arel_table[:expiration_date].gteq(Date.current))}
 
+  after_create_commit :create_notification
+
   def check_expire? job
     job.expiration_date >= Date.current
   end
 
   private
+
+  def create_notification
+    self.tags.each do |tag_job|
+      @tag = Tag.find_by id: tag_job.id
+      @tag.followers.pluck(:id).each do |id|
+        Notification.create user_id: id, target_type: Job.name,
+          target_id: @tag.id, content: I18n.t(".noti_job") << @tag.name
+      end
+    end
+  end
 
   def check_expried
     return unless expiration_date.presence

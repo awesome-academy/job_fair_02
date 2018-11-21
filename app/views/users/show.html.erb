@@ -23,6 +23,16 @@
         <%= @user.phone %><br>
       </ul>
     </div>
+    <% if user_signed_in? && @user.follows.any? %>
+      <h4><i class="fa fa-tags"></i><%= "Tags following" %></h4><br>
+      <ul class="tags">
+        <li>
+          <% @user.all_following.each do |tag| %>
+            <%= link_to tag.name, tag_path(tag.name) %>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
   </div>
   <div class="col-lg-8">
       <% if @user.curriculum_vitaes.any? %>

@@ -28,4 +28,4 @@ type_avatar: ["image/jpeg", "image/gif", "image/png"]
 type_form: ["application/msword", "application/pdf", "application/zip"]
 url_form: "public/system/:basename.:extension"
 path_form: ":rails_root/public/system/:basename.:extension"
-
+show_notification: 5

@@ -8,6 +8,9 @@ en:
       signup: "Sign up"
       login: "Log in"
       logout: "Log out"
+      show_all: "Show all"
+      noti: "Notifications"
+      no_noti: "No notifications"
     footer:
       address: "Address"
       addr1: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road, Nam Tu Liem District., Ha Noi"
@@ -166,10 +169,16 @@ en:
       cv_not_found: "Curriculum vitae not found!"
       cv_tagged: "Curriculum Vitaes Tagged"
       job_tagged: "Jobs Tagged"
+      follow: "Follow"
+      unfollow: "Unfollow"
+  notifications:
+    noti: "Notifications"
   cant_select_and_upload: "You can't select and upload file"
   upload_failed: "Upload failed"
   cv_applied: "This CV has applied before. Please select another CV"
   applied_failed: "Apply failed"
+  noti_job: "A job has been created with tag "
+  noti_cv: "A CV has been created with tag "
   organizations:
     new:
       title: "Create Organization"
