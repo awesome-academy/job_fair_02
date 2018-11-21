@@ -8,10 +8,10 @@ class CreateOrganizations < ActiveRecord::Migration[5.2]
       t.string :website
       t.string :scales
       t.text :description
-      t.string :avatar
+      t.attachment :avatar
       t.string :website
       t.integer :founded
-      t.string :form_cv
+      t.attachment :form_cv
       t.boolean :verified, default: false
 
       t.timestamps

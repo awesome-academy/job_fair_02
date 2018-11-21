@@ -1,0 +1,87 @@
+<% provide :title, @organization.name %>
+<div >
+  <div class="container company mt-5">
+    <div class="row">
+
+      <div class="col-md-4 company_info mt-5">
+        <% if @organization.avatar.present? %>
+          <%= image_tag @organization.avatar.url(:med), class: "mb-5" %><br>
+        <% else %>
+          <%= image_tag "evolable-asia-logo.png", class: "mb-5" %><br>
+        <% end %>
+
+        <i class="fa fa-home"></i>
+        <p class="mt-5 "><%= t ".company" %>:&nbsp;</p>
+        <p><%= link_to @organization.name, @organization %></p><br>
+        <hr>
+
+        <i class="fa fa-users"></i>
+        <p class="mt-5 "><%= t ".scales" %>:&nbsp;</p>
+        <p><%= @organization.scales %></p><br>
+        <hr>
+
+        <i class="fa fa-phone"></i>
+        <p><%= t ".phone" %>:&nbsp;</p>
+        <p><%= @organization.phone %></p><br>
+        <hr>
+        
+        <i class="fa fa-envelope"></i>
+        <p><%= t ".email" %>:&nbsp;</p>
+        <p><%= @organization.email %></p><br>
+        <hr>
+
+        <i class="fa fa-globe"></i>
+        <p><%= t ".website" %>:&nbsp;</p>
+        <p><%= link_to @organization.website,
+          @organization.website, target: "_blank" %></p><br>
+        <hr>
+
+        <i class="fa fa-map-marker"></i>
+        <p><%= t ".address" %>:&nbsp;</p>
+        <p><%= @organization.address %></p><br>
+        <hr>
+        
+        <div class="info-icon">
+          <i class="fa fa-facebook-square fa-2x facebook"></i>
+          <i class="fa fa-google-plus-square fa-2x google"></i>
+          <i class="fa fa-linkedin-square fa-2x linkedin"></i>
+          <i class="fa fa-youtube-square fa-2x youtube"></i>
+          <i class="fa fa-skype fa-2x skype"></i>
+        </div>
+
+        <ul class="tags mt-3">
+          <li>
+            <%= render "shared/show_tag", show_tag: @organization %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-8 job_info">
+
+        <h3 class="text-uppercase font-weight-bold text-center mb-5">
+            <%= @organization.name %></h3>
+
+        <h5><%= t ".about_us" %></h5><hr>
+        <p class="text-justify"><%= @organization.description %></p><br>
+
+        <% if @organization.form_cv.present? %>
+          <hr><i><%= t ".form_cv" %></i><br>
+          <%= link_to t(".download"), @organization.form_cv.url(:original),
+            download: @organization.form_cv.url(:original),
+            target: "_blank", class: "btn btn-sm btn-warning mt-2"%>
+        <% end %>
+
+        <% if @jobs.present? %>
+          <h5><%= t ".job_was_post" %></h5>
+          <hr>
+          <div class="row">
+            <%= render @jobs %>
+          </div>
+          <div class="row justify-content-center">
+            <%= paginate @jobs, theme: "twitter-bootstrap-3" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

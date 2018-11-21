@@ -35,6 +35,11 @@
   i {
     color: $green;
   }
+
+  img {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .company {
@@ -202,4 +207,9 @@ ul.tags li a:hover{
 
 .tag-cv {
   margin-left: 220px !important;
+}
+
+.dropdown-menu {
+  top: 52px !important;
+  left: -37px !important;
 }

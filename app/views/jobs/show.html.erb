@@ -9,7 +9,8 @@
 
         <i class="fa fa-home"></i>
         <p class="mt-5 "><%= t ".company" %>:&nbsp;</p>
-        <p><%= link_to @job.organization.name %></p><br>
+        <p><%= link_to @job.organization.name,
+            organization_path(@job.organization_id) %></p><br>
         <hr>
 
         <i class="fa fa-phone"></i>

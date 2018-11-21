@@ -4,6 +4,7 @@ en:
     header:
       createCV: "Create curriculum vitae"
       createJob: "Create job"
+      organization: "Organization"
       signup: "Sign up"
       login: "Log in"
       logout: "Log out"
@@ -20,6 +21,7 @@ en:
     models:
       curriculum_vitae: "Curriculum Vitae"
       job: "Job"
+      organization: "Organization"
     attributes:
       job:
         job: "Create Job"
@@ -45,6 +47,16 @@ en:
       curriculum_vitae_detail:
         title: "Title"
         content: "Content"
+      organization:
+        name: "Organization Name"
+        email: "Email"
+        phone: "Phone"
+        website: "Website"
+        address: "Address"
+        scales: "Scales"
+        founded: "Founded"
+        form_cv : "Form CV"
+        description : "Description"
   users:
     registrations:
       signup: "Sign up"
@@ -157,3 +169,16 @@ en:
   upload_failed: "Upload failed"
   cv_applied: "This CV has applied before. Please select another CV"
   applied_failed: "Apply failed"
+  organizations:
+    new:
+      title: "Create Organization"
+    create:
+      success: "Create organization success!"
+      error: "Create organization error!"
+    show:
+      about_us: "About Us"
+      not_found: "Organization not found!"
+      form_cv: "Using curriculum vitae sample form and apply to us now!"
+      download_here: "Download here:"
+      download: "Download"
+      job_was_post: "Jobs was post"
