@@ -21,7 +21,9 @@ class CurriculumVitae < ApplicationRecord
   validates :language, presence: true,
     length: {maximum: Settings.max_length_lang}
   validates_attachment :cv_upload,
-    content_type: {content_type: "application/pdf"}
+    content_type: {content_type: "application/pdf"},
+    url: Settings.url_form,
+    path: Settings.path_form
 
   CURRICULUM_VITAE_PARAMS = [:industry, :target, :experience, :skill, :language,
     :public, :tag_list, curriculum_vitae_details_attributes:
